@@ -87,12 +87,6 @@ remove_net_scripts() {
     done
     verbose "Creating generic network settings"
     do_cmd write_file '/etc/sysconfig/network' < /dev/null
-    do_cmd write_file '/etc/sysconfig/network-scripts/ifcfg-eth0' <<EOF
-DEVICE=eth0
-TYPE=Ethernet
-ONBOOT=yes
-BOOTPROTO=dhcp
-EOF
 }
 
 remove_net_persistent() {
